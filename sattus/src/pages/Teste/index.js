@@ -3,7 +3,12 @@ import "./style.scss"
 function Teste() {
     return (
       <div>
-          Ola, eu sou um teste
+          <button className="btn-secondary">
+              Novo objetivo
+          </button>
+          <button className="btn-category">
+              Categoria
+          </button>
       </div>
     );
   }
