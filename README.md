@@ -15,7 +15,7 @@ Para desenvolver o desafio é necessário utilizar a API que está na pasta back
 
 Ir para a pasta da api: `cd api`
 Instalar dependências: `npm install`
-Iniciar API: `npm start`
+Iniciar API: `-`
 
 Abaixo seguem as rotas da API necessárias para o desafio.
 
@@ -86,13 +86,14 @@ Ao acionar essa ação, a rota de atualização de status deve ser chamada.
 ```
 
 ### Pesquisar - bônus
+
 Essa funcionalidade não é obrigatória, mas caso queira você pode criar a ação do input de busca e filtrar os objetivos por título.
 
 ### Cadastrar um novo objetivo - bônus
+
 Essa funcionalidade não é obrigatória, mas caso queira criar novos objetivos pode criar um modal com os campos título, descrição e categoria.
 
 Para cadastrar um novo objetivo é necessário chamar a rota de cadastro de objetivo.
-
 
 **Exemplo**:
 `http://localhost:3001/targets` [POST]

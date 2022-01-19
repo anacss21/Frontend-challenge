@@ -1,0 +1,26 @@
+.page {
+  width: 100%;
+  background: #e5e5e5;
+  .menuLateral {
+    position: absolute;
+
+    height: 820px;
+    left: 0px;
+    top: 0px;
+
+    background: #d9d9d9;
+  }
+  .header {
+    margin-top: 64px;
+    margin-bottom: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: red;
+  }
+  .btn-contact {
+    background: red;
+    display: flex;
+  }
+}
