@@ -1,10 +1,9 @@
 import "./App.css";
-import Menu from "./pages";
 
 function App() {
   return (
     <div className="App">
-      <Menu />
+      <p> oi estou aqui </p>
     </div>
   );
 }
