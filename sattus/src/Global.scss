@@ -7,20 +7,33 @@
   margin: 0;
   padding: 0;
 }
-$primary: #F55673;
-$primary_1: #B53F55;
-$primary__1: #FF738C;
-$secondary: #535EE6;
+$primary: #f55673;
+$primary_1: #b53f55;
+$primary__1: #ff738c;
+$secondary: #535ee6;
 $secondary_1: #252966;
-$secondary__1: #757EFF;
+$secondary__1: #757eff;
 
 @mixin colors($c, $bg) {
   background-color: $bg;
   color: $c;
   -webkit-text-fill-color: $c;
 }
+h1,
+h2,
+h3 {
+  font-style: normal;
+  color: #000000;
+  text-align: left;
+}
+p {
+  font-style: normal;
+  text-align: justify;
+  color: #000000;
+  margin-bottom: 17.5px;
+}
 .btn-secondary {
-  all:unset;
+  all: unset;
   box-sizing: border-box;
   @include colors(white, $secondary);
   text-decoration: none;
@@ -36,11 +49,11 @@ $secondary__1: #757EFF;
   padding: 15px 60px;
 }
 
-.btn-category{
-  all:unset;
+.btn-category {
+  all: unset;
   box-sizing: border-box;
   @include colors(white, $primary);
-  width:65px;
+  width: 65px;
   font-family: Comfortaa;
   font-size: 10px;
   font-style: normal;
@@ -52,4 +65,3 @@ $secondary__1: #757EFF;
   border-radius: 5px;
   padding: 3.5px 7px 4.6px 7px;
 }
-

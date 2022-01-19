@@ -1,0 +1,29 @@
+.container-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #ffffff;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.25);
+  .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .mark {
+      .close {
+        margin-left: 9px;
+      }
+    }
+  }
+  .types {
+    display: flex;
+    justify-content: space-between;
+    .dateTime {
+      color: #444444;
+      border: 0 none;
+      outline: 0;
+      box-shadow: 0 0 0 0;
+      display: flex;
+    }
+  }
+}
