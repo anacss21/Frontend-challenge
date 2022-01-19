@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+$primary: #F55673;
+$primary_1: #B53F55;
+$primary__1: #FF738C;
+$secondary: #535EE6;
+$secondary_1: #252966;
+$secondary__1: #757EFF;
+
+@mixin colors($c, $bg) {
+  background-color: $bg;
+  color: $c;
+  -webkit-text-fill-color: $c;
+}
+.btn-secondary {
+  all:unset;
+  box-sizing: border-box;
+  @include colors(white, $secondary);
+  text-decoration: none;
+  width: 220px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  border-radius: 8px;
+  padding: 15px 60px;
+}
+
+.btn-category{
+  all:unset;
+  box-sizing: border-box;
+  @include colors(white, $primary);
+  width:65px;
+  font-family: Comfortaa;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 11px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  font-family: Comfortaa;
+  border-radius: 5px;
+  padding: 3.5px 7px 4.6px 7px;
+}
+

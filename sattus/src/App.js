@@ -1,5 +1,5 @@
-import "./App.css";
-import Teste from "./pages/Teste/index";
+import "./Global.scss";
+import Teste from "./pages/Teste";
 
 function App() {
   return (
