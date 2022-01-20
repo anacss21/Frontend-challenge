@@ -5,8 +5,15 @@
   .teste {
     width: 100%;
     background: #e5e5e5;
-      .btn {
-      cursor: pointer;
-      }
+    .button-card{
+      display:flex;
+      flex-direction: column;
+      gap:25px;
+      padding: 25px 85px 0px 85px;
+        .btn {
+          display:flex;
+          justify-content: flex-end;      
+        }
+    }
   }
 }
