@@ -11,9 +11,9 @@ function Header() {
             disable
             placeholder="Pesquisar"
             type="text"
-          ></input>
+          />
+          <img src={setSearch} />
         </div>
-        <img src={setSearch} />
       </div>
       <h2 className="name">Olá Bianca!</h2>
     </div>
