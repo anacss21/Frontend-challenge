@@ -1,13 +1,19 @@
+@import "../../Global.scss";
+
 .desktop {
   display: flex;
   .teste {
     width: 100%;
     background: #e5e5e5;
-    .btn {
+    .button-card {
       display: flex;
-      justify-content: flex-end;
-      margin: 40px 80px 0px 0px;
-      cursor: pointer;
+      flex-direction: column;
+      gap: 25px;
+      padding: 25px 85px 0px 85px;
+      .btn {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 }
