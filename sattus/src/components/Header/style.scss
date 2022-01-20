@@ -1,6 +1,7 @@
 .component-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 11px 20px 11px 18px;
   background: #ffffff;
@@ -14,21 +15,29 @@
     letter-spacing: -0.035em;
     color: #f55673;
   }
-  .searchIn {
+  .search{
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: space-between;
-
-    width: 456px;
+    min-width:456px;
     background: #f2f2f2;
+    padding:15px 20px;
     border-radius: 10px;
-
     .search-input {
       all: unset;
       box-sizing: border-box;
       padding-left: 10px;
       align-self: center;
+      min-width: 456px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      color:#7E8086;
+
     }
   }
 }

@@ -1,13 +1,12 @@
+@import '../../Global.scss';
+
 .desktop {
   display: flex;
   .teste {
     width: 100%;
     background: #e5e5e5;
-    .btn {
-      display: flex;
-      justify-content: flex-end;
-      margin: 40px 50px 0px 0px;
+      .btn {
       cursor: pointer;
-    }
+      }
   }
 }

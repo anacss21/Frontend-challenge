@@ -37,6 +37,8 @@ input {
 }
 .btn-secondary {
   all: unset;
+  display:flex;
+  justify-content: flex-end;
   box-sizing: border-box;
   @include colors(white, $secondary);
   text-decoration: none;
