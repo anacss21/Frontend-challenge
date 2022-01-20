@@ -1,10 +1,10 @@
 import "./Global.scss";
-import Teste from "./pages/Teste";
+import Desktop from "./pages/Desktop/index";
 
 function App() {
   return (
     <div className="App">
-      <Teste/>
+      <Desktop />
     </div>
   );
 }
