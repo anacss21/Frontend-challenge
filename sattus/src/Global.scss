@@ -24,13 +24,16 @@ h2,
 h3 {
   font-style: normal;
   color: #000000;
-  text-align: left;
 }
 p {
   font-style: normal;
   text-align: justify;
   color: #000000;
+  width: 650px;
   margin-bottom: 17.5px;
+}
+input {
+  border: 0 none;
 }
 .btn-secondary {
   all: unset;

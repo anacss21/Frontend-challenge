@@ -3,13 +3,21 @@
   flex-direction: column;
   justify-content: center;
 
+  margin: 50px;
+
   background: #ffffff;
   box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.25);
+  padding: 0px 18px 10px 20px;
+
   .card {
     display: flex;
     justify-content: space-between;
     align-items: center;
     .mark {
+      display: flex;
+      justify-content: center;
+      height: 36px;
+      cursor: pointer;
       .close {
         margin-left: 9px;
       }
@@ -18,12 +26,22 @@
   .types {
     display: flex;
     justify-content: space-between;
-    .dateTime {
-      color: #444444;
-      border: 0 none;
-      outline: 0;
-      box-shadow: 0 0 0 0;
+    input .dateTime {
       display: flex;
+      color: #444444;
+    }
+    .getDate {
+      width: 68px;
     }
   }
+}
+.green {
+  background: #e9ffe9;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.grey {
+  background: #e9ffe9;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
