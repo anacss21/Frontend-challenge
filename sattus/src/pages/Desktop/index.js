@@ -3,6 +3,8 @@ import Card from "../../components/Card/index";
 import Header from "../../components/Header/index";
 import Sidebar from "../../components/Sidebar/index";
 import { useState, useEffect } from "react";
+import useUsersList from "../../hooks/useUsersList";
+
 function Desktop() {
   const [objectives, setObjectives] = useState(false);
   return (
