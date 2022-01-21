@@ -7,17 +7,14 @@ function useUsersListProvider() {
   const [complete, setComplete] = useState(false);
   const [ativas, setAtivas] = useState(true);
 
-  // Actives
   function handleAtivas() {
     setComplete(false);
     setAtivas(true);
   }
-  // Deleted
   function handleCompletas() {
     setComplete(true);
     setAtivas(false);
   }
-  // Done
   function handleTodas() {
     setComplete(false);
     setAtivas(false);
@@ -34,7 +31,6 @@ function useUsersListProvider() {
       console.log(error);
     }
   }
-
   async function loadAllCategories() {
     try {
       const response = await fetch("http://localhost:3001/categories/", {
@@ -47,7 +43,6 @@ function useUsersListProvider() {
       console.log(error);
     }
   }
-
   const uptadeStatusObjective = async (objectives, operation) => {
     try {
       let operationIcon = objectives.status;
@@ -62,7 +57,6 @@ function useUsersListProvider() {
           operationIcon = "active";
           break;
       }
-
       const body = {
         status: operationIcon,
       };
@@ -87,7 +81,6 @@ function useUsersListProvider() {
   async function handleChange(objectives, operation) {
     await uptadeStatusObjective(objectives, operation);
   }
-
   return {
     objectivesData,
     setObjectivesData,
