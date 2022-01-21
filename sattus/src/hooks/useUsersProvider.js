@@ -24,11 +24,7 @@ function useUsersListProvider() {
     setComplete(false);
     setAtivas(false);
   }
-  
-  async function handleChange(objectives, operation) {
-   setOperation(operation);
-    await uptadeStatusObjective(objectives);
-  }
+
   async function loadAllObjectives() {
     try {
       const response = await fetch("http://localhost:3001/targets/", {
@@ -70,11 +66,11 @@ function useUsersListProvider() {
     }
   }
 
-  const uptadeStatusObjective = async (objectives) => {
+  const uptadeStatusObjective = async (objectives, operation) => {
     console.log("estado natural do operation", operation);
     try {
       let operationIcon = objectives.status;
-      console.log("Cliquei 2", operationIcon);
+
       switch (operation) {
         case "check":
           operationIcon = "done";
@@ -101,12 +97,16 @@ function useUsersListProvider() {
         }
       );
       const data = await response.json();
-      loadAllObjectives()
+      console.log(data);
+      loadAllObjectives();
     } catch (error) {
       console.log(error);
     }
   };
 
+  async function handleChange(objectives, operation) {
+    await uptadeStatusObjective(objectives, operation);
+  }
   // async function loadCategories(idCategorie) {
   //   console.log("to na função por id");
   //   try {
