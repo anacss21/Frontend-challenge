@@ -1,11 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { UsersListProvider } from "./contexts/UserListContext";
+import { BrowserRouter as Router } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UsersListProvider>
+      <Router>
+        <App />
+      </Router>
+    </UsersListProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

@@ -1,40 +1,27 @@
 import "./style.scss";
 import Check from "../../assets/check.svg";
 import Close from "../../assets/close.svg";
-import { useState, useEffect } from "react";
+import { useEffect, React } from "react";
+import useUsersList from "../../hooks/useUsersList";
 function Card() {
-  const [objectivesData, setObjectivesData] = useState([]);
-  const [categoriesData, setCategoriesData] = useState([]);
+  const {
+    objectivesData,
+    setObjectivesData,
+    loadObjectives,
+    categoriesData,
+    setCategoriesData,
+    loadCategories,
+    loadNewCategorie,
+    newObject,
+  } = useUsersList();
   useEffect(() => {
-    async function loadObjectives() {
-      try {
-        const response = await fetch("http://localhost:3001/targets/", {
-          method: "GET",
-        });
-        const data = await response.json();
-        setObjectivesData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
     loadObjectives();
-    async function loadCategories() {
-      try {
-        const response = await fetch("http://localhost:3001/categories", {
-          method: "GET",
-        });
-        const data = await response.json();
-        setCategoriesData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
     loadCategories();
+    loadNewCategorie();
   }, []);
-
   return (
     <>
-      {objectivesData.map((objective) => (
+      {newObject.map((objective) => (
         <div className="container-card">
           <div className="card">
             <div className="content">
@@ -48,7 +35,7 @@ function Card() {
             </div>
           </div>
           <div className="types">
-            <button className="btn-category"></button>
+            <button className="btn-category">{objective.name}</button>
             <div className="dateTime">
               <label className="dateName"> criado em: </label>
               <input
