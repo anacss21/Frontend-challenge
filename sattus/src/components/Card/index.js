@@ -14,14 +14,7 @@ function Card() {
     allCategoriesData,
     handleChange,
     complete,
-    setComplete,
     ativas,
-    setAtivas,
-    handleAtivas,
-    handleCompletas,
-    handleTodas,
-    showIcons,
-    setShowIcons,
   } = useUsersList();
   useEffect(() => {
     loadAllObjectives();

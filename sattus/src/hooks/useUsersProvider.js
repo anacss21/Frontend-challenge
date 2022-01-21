@@ -4,29 +4,26 @@ function useUsersListProvider() {
   const [objectivesData, setObjectivesData] = useState([]);
   const [allObjectivesData, setAllObjectivesData] = useState([]);
   const [allCategoriesData, setAllCategoriesData] = useState([]);
-  const [titleInput, setTitleInput]=useState("")
-  const [descriptionInput, setDescriptionInput]=useState("")
-  const [categoryInput, setCategoryInput]=useState("")
+  // para adicionar novo objetivo depois
+  // const [titleInput, setTitleInput]=useState("")
+  // const [descriptionInput, setDescriptionInput]=useState("")
+  // const [categoryInput, setCategoryInput]=useState("")
   const [complete, setComplete] = useState(false);
   const [ativas, setAtivas] = useState(true);
-  const [showIcons, setShowIcons]=useState(true);
-  // Actives
   function handleAtivas() {
     setComplete(false);
     setAtivas(true);
-    setObjectives(true)
+    setObjectives(true);
   }
-  // Deleted
   function handleCompletas() {
     setComplete(true);
     setAtivas(false);
-    setObjectives(false)
+    setObjectives(false);
   }
-  // Done
   function handleTodas() {
     setComplete(false);
     setAtivas(false);
-    setObjectives(true)
+    setObjectives(true);
   }
 
   async function loadAllObjectives() {
@@ -40,7 +37,6 @@ function useUsersListProvider() {
       console.log(error);
     }
   }
-
   async function loadAllCategories() {
     try {
       const response = await fetch("http://localhost:3001/categories/", {
@@ -53,7 +49,6 @@ function useUsersListProvider() {
       console.log(error);
     }
   }
-
   const uptadeStatusObjective = async (objectives, operation) => {
     try {
       let operationIcon = objectives.status;
@@ -87,35 +82,35 @@ function useUsersListProvider() {
       console.log(error);
     }
   };
-  const createNewObjective = async () =>{
-    try {
-      const response = await fetch(
-        "http://localhost:3001/targets",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({
-            title: titleInput,
-            description:  descriptionInput,
-            category:  categoryInput,
-            status: "active"
-          }),
-        }
-      );
 
-      const data = await response.json();
+  // para seguir com a adição de um novo objetivo
+  // const createNewObjective = async () =>{
+  //   try {
+  //     const response = await fetch(
+  //       "http://localhost:3001/targets",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "content-type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           title: titleInput,
+  //           description:  descriptionInput,
+  //           category:  categoryInput,
+  //           status: "active"
+  //         }),
+  //       }
+  //     );
 
-       } catch (error) {
-      console.log(error);
-    }
-  }
+  //     const data = await response.json();
+  //      } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   async function handleChange(objectives, operation) {
     await uptadeStatusObjective(objectives, operation);
   }
-
   return {
     objectivesData,
     setObjectivesData,
@@ -136,8 +131,6 @@ function useUsersListProvider() {
     handleCompletas,
     handleTodas,
     handleChange,
-    showIcons, 
-    setShowIcons
   };
 }
 export default useUsersListProvider;

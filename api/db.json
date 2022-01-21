@@ -36,7 +36,11 @@
       "description": "Aprender a tocar evidências no violão",
       "category": 4,
       "createdAt": "2022-01-10",
+<<<<<<< HEAD
       "status": "done"
+=======
+      "status": "active"
+>>>>>>> 463df09e324d2ba14f8199dcb36aa3120f955465
     },
     {
       "id": 3,
@@ -69,7 +73,22 @@
       "category": 5,
       "createdAt": "2021-07-01",
       "achievedAt": "2021-12-14",
+<<<<<<< HEAD
       "status": "done"
+=======
+      "status": "deleted"
+    },
+    {
+      "id": 7
+    },
+    {
+      "title": "Título do objetivo",
+      "description": "Descrição do objetivo",
+      "category": 5,
+      "createdAt": "2022-01-15",
+      "status": "active",
+      "id": 8
+>>>>>>> 463df09e324d2ba14f8199dcb36aa3120f955465
     }
   ]
 }
