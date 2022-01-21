@@ -6,7 +6,29 @@ function useUsersListProvider() {
   const [categoriesData, setCategoriesData] = useState([]);
   const [allCategoriesData, setAllCategoriesData] = useState([]);
   const [updateStatus, setUpdateStatus] = useState(false);
-
+  const [complete, setComplete] = useState(false);
+  const [ativas, setAtivas] = useState(true);
+  const [operation, setOperation] = useState(true);
+  // Actives
+  function handleAtivas() {
+    setComplete(false);
+    setAtivas(true);
+  }
+  // Deleted
+  function handleCompletas() {
+    setComplete(true);
+    setAtivas(false);
+  }
+  // Done
+  function handleTodas() {
+    setComplete(false);
+    setAtivas(false);
+  }
+  
+  async function handleChange(objectives, operation) {
+   setOperation(operation);
+    await uptadeStatusObjective(objectives);
+  }
   async function loadAllObjectives() {
     try {
       const response = await fetch("http://localhost:3001/targets/", {
@@ -48,24 +70,41 @@ function useUsersListProvider() {
     }
   }
 
-  const uptadeStatusObjective = async (id) => {
+  const uptadeStatusObjective = async (objectives) => {
+    console.log("estado natural do operation", operation);
     try {
-      const response = await fetch(`http://localhost:3001/targets/${id}  `, {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          // id: allObjectivesData.id,
-          // title: allObjectivesData.title,
-          // description: allObjectivesData.description,
-          // category: allObjectivesData.category,
-          // createdAt: allObjectivesData.createdAt,
-          status: allObjectivesData.status === "done" || "active",
-        }),
-      });
+      let operationIcon = objectives.status;
+      console.log("Cliquei 2", operationIcon);
+      switch (operation) {
+        case "check":
+          operationIcon = "done";
+          break;
+        case "close":
+          operationIcon = "deleted";
+          break;
+        case "restore":
+          operationIcon = "active";
+          break;
+      }
+      console.log("Cliquei operation", operation);
+      const body = {
+        status: operationIcon,
+      };
+      const response = await fetch(
+        `http://localhost:3001/targets/${objectives.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(body),
+        }
+      );
       const data = await response.json();
-    } catch (error) {}
+      loadAllObjectives()
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   // async function loadCategories(idCategorie) {
@@ -84,14 +123,6 @@ function useUsersListProvider() {
   //     console.log("entrei no catch");
   //   }
   // }
-
-  const handleChange = (event) => {
-    allObjectivesData.filter((item) => {
-      return item.status;
-    });
-    console.log("usei a função");
-    console.log(handleChange());
-  };
 
   return {
     objectivesData,
@@ -112,6 +143,16 @@ function useUsersListProvider() {
     updateStatus,
     setUpdateStatus,
     // handleChange,
+    complete,
+    setComplete,
+    ativas,
+    setAtivas,
+    handleAtivas,
+    handleCompletas,
+    handleTodas,
+    operation,
+    setOperation,
+    handleChange,
   };
 }
 export default useUsersListProvider;

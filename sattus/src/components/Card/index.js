@@ -22,7 +22,6 @@ function Card(estouem) {
     setObjectivesData,
     loadObjectives,
     categoriesData,
-
     loadAllCategories,
     loadCategoriesObjetive,
     allCategoriesData,
@@ -31,21 +30,28 @@ function Card(estouem) {
     loadCategories,
     loadNewCategorie,
     newObject,
-
     updateStatus,
     setUpdateStatus,
+    complete,
+    setComplete,
+    ativas,
+    setAtivas,
+    handleCompletas,
+    handleAtivas,
+    handleTodas,
+    uptadeStatusObjective,
+    operation,
+    setOperation,
+    handleChange,
   } = useUsersList();
   useEffect(() => {
     loadAllObjectives();
-
     loadAllCategories();
-    // loadCategories();
-    // loadNewCategorie();
   }, []);
   return (
     <>
       {allObjectivesData.map((objective) => (
-        <div className={objectives ? "container-card" : "container-card grey"}>
+        <div className={"container-card"}>
           <div className="card">
             <div className="content">
               <h2 className="title">{objective.title}</h2>
@@ -58,7 +64,7 @@ function Card(estouem) {
                   alt="x"
                   className="check"
                   onClick={() => {
-                    setUpdateStatus(true);
+                    handleChange(objective, "check");
                   }}
                 />
               )}
@@ -68,7 +74,7 @@ function Card(estouem) {
                   alt="x"
                   className="close"
                   onClick={() => {
-                    setObjectives(false);
+                    handleChange(objective, "close");
                   }}
                 />
               )}
@@ -78,42 +84,13 @@ function Card(estouem) {
                   src={Restore}
                   alt="x"
                   className="restore"
-                  onClick={() => {}}
+                  onClick={() => {
+                    handleChange(objective, "restore");
+                  }}
                 />
               )}
             </div>
           </div>
-
-          {/* <div className="card">
-            <div className="content">
-              <h2 className="title">{objective.title}</h2>
-              <p className="description">{objective.description}</p>
-            </div>
-            <div className="mark">
-              {objectives && (
-                <img src={Check} alt="x" className="check" onClick={() => {}} />
-              )}
-              {objectives && (
-                <img
-                  src={Close}
-                  alt="x"
-                  className="close"
-                  onClick={() => {
-                    setObjectives(false);
-                  }}
-                />
-              )}
-
-              {!objectives && (
-                <img
-                  src={Restore}
-                  alt="x"
-                  className="restore"
-                  onClick={() => {}}
-                />
-              )}
-            </div>
-          </div> */}
 
           <div className="types">
             <button className="btn-category">
