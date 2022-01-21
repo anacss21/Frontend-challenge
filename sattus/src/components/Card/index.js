@@ -2,46 +2,15 @@ import "./style.scss";
 import Check from "../../assets/check.svg";
 import Close from "../../assets/close.svg";
 import Restore from "../../assets/restore.svg";
-import { useEffect, React, useState } from "react";
+import { useEffect, React } from "react";
 import useUsersList from "../../hooks/useUsersList";
-function Card(estouem) {
-  const handleNavigate = () => {
-    if (estouem === "objetivos") {
-      setObjectivesData(false);
-
-      console.log("entrei em objetivos");
-    }
-  };
-
+function Card() {
   const {
     objectives,
-    setObjectives,
-    objectivesData,
     loadAllObjectives,
     allObjectivesData,
-    setObjectivesData,
-    loadObjectives,
-    categoriesData,
     loadAllCategories,
-    loadCategoriesObjetive,
     allCategoriesData,
-    setAllCategoriesData,
-    setCategoriesData,
-    loadCategories,
-    loadNewCategorie,
-    newObject,
-    updateStatus,
-    setUpdateStatus,
-    complete,
-    setComplete,
-    ativas,
-    setAtivas,
-    handleCompletas,
-    handleAtivas,
-    handleTodas,
-    uptadeStatusObjective,
-    operation,
-    setOperation,
     handleChange,
   } = useUsersList();
   useEffect(() => {
