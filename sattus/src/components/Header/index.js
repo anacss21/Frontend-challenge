@@ -2,6 +2,12 @@ import "./style.scss";
 import setSearch from "../../assets/search.svg";
 
 function Header() {
+  // const handleChange = (event) => {
+  //   objective.filter((item) => {
+  //     return item.title.toLowerCase().match(event.target.value.toLowerCase());
+  //   });
+  // };
+
   return (
     <div className="component-header">
       <div>
