@@ -28,7 +28,7 @@
       "description": "Concluir pelo menos 1 curso em 2022 sobre UX",
       "category": 4,
       "createdAt": "2022-01-01",
-      "status": "active"
+      "status": "done"
     },
     {
       "id": 2,
@@ -36,7 +36,7 @@
       "description": "Aprender a tocar evidências no violão",
       "category": 4,
       "createdAt": "2022-01-10",
-      "status": "active"
+      "status": "deleted"
     },
     {
       "id": 3,
@@ -60,7 +60,7 @@
       "description": "Economizar pelo menos 1200 reais em 2022 para a viagem de virada do ano de 2023",
       "category": 5,
       "createdAt": "2022-01-02",
-      "status": "active"
+      "status": "deleted"
     },
     {
       "id": 6,
