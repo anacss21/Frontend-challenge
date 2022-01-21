@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #ffffff;
   box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.25);
   padding: 0px 18px 10px 20px;
   border-radius: 5px;
@@ -38,4 +37,10 @@
 }
 .grey {
   background: #ececec;
+}
+.green{
+  background: #E9FFE9;
+}
+.white{
+  background: #ffffff;
 }

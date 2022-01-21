@@ -3,15 +3,16 @@ import Logo from "../../assets/Logo.svg";
 import goal from "../../assets/objectives.svg";
 import trash from "../../assets/trash.svg";
 import Line from "../../assets/Line.svg";
-import { useState } from "react";
+import useUsersList from "../../hooks/useUsersList";
 function Sidebar({ objectives, setObjectives }) {
+  const { handleCompletas, handleAtivas } = useUsersList();
   return (
     <header className="sidebar">
       <div className="logo">
         <img className="logo-img" src={Logo} />
       </div>
       <div className="boxesSidebar">
-        <div className="box" onClick={() => setObjectives(true)}>
+        <div className="box" onClick={() => handleAtivas() }>
           <div className="boxIn">
             <img className="goal" src={goal} />
             <h3 className="description">Objetivos</h3>
@@ -22,7 +23,7 @@ function Sidebar({ objectives, setObjectives }) {
             </div>
           )}
         </div>
-        <div className="box" onClick={() => setObjectives(false)}>
+        <div className="box" onClick={() => handleCompletas()}>
           <div className="boxIn">
             <img className="trash" src={trash} />
             <h3 className="description">Excluídos</h3>

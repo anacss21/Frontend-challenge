@@ -28,7 +28,7 @@
       "description": "Concluir pelo menos 1 curso em 2022 sobre UX",
       "category": 4,
       "createdAt": "2022-01-01",
-      "status": "done"
+      "status": "active"
     },
     {
       "id": 2,
@@ -36,7 +36,7 @@
       "description": "Aprender a tocar evidências no violão",
       "category": 4,
       "createdAt": "2022-01-10",
-      "status": "deleted"
+      "status": "done"
     },
     {
       "id": 3,
@@ -44,7 +44,7 @@
       "description": "Começar a praticar algum esporte aquático em 2022",
       "category": 1,
       "createdAt": "2021-12-14",
-      "status": "active"
+      "status": "done"
     },
     {
       "id": 4,
@@ -52,7 +52,7 @@
       "description": "Ler pelo menos dez livros em 2022",
       "category": 5,
       "createdAt": "2022-01-02",
-      "status": "active"
+      "status": "done"
     },
     {
       "id": 5,
@@ -60,7 +60,7 @@
       "description": "Economizar pelo menos 1200 reais em 2022 para a viagem de virada do ano de 2023",
       "category": 5,
       "createdAt": "2022-01-02",
-      "status": "deleted"
+      "status": "active"
     },
     {
       "id": 6,
@@ -69,10 +69,7 @@
       "category": 5,
       "createdAt": "2021-07-01",
       "achievedAt": "2021-12-14",
-      "status": "done"
-    },
-    {
-      "id": 7
+      "status": "active"
     }
   ]
 }
