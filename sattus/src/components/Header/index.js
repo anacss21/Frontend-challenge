@@ -1,13 +1,10 @@
 import "./style.scss";
+import { React } from "react";
 import setSearch from "../../assets/search.svg";
+import useUsersList from "../../hooks/useUsersList";
 
 function Header() {
-  // const handleChange = (event) => {
-  //   objective.filter((item) => {
-  //     return item.title.toLowerCase().match(event.target.value.toLowerCase());
-  //   });
-  // };
-
+  // const { handleChange } = useUsersList();
   return (
     <div className="component-header">
       <div>
@@ -17,6 +14,7 @@ function Header() {
             disable
             placeholder="Pesquisar"
             type="text"
+            // onchange={handleChange()}
           />
           <img src={setSearch} />
         </div>
