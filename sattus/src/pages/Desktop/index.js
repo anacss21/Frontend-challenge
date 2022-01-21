@@ -2,11 +2,11 @@ import "./style.scss";
 import Card from "../../components/Card/index";
 import Header from "../../components/Header/index";
 import Sidebar from "../../components/Sidebar/index";
-import { useState, useEffect } from "react";
+import { React } from "react";
 import useUsersList from "../../hooks/useUsersList";
 
-function Desktop() {
-  const [objectives, setObjectives] = useState(false);
+function Desktop(estouEm) {
+  const { objectives, setObjectives } = useUsersList();
   return (
     <div className="desktop">
       <Sidebar objectives={objectives} setObjectives={setObjectives} />
@@ -18,7 +18,7 @@ function Desktop() {
               <button className="btn-secondary ">Novo objetivo</button>
             )}
           </div>
-          <Card />
+          <Card estouEm={(estouEm = "Excluidos")} />
         </div>
       </div>
     </div>
